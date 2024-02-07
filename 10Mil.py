@@ -6,6 +6,8 @@ def ingresar_nombres():
         nombre = input('Ingrese un nombre: ')
         lista_nombres.append([nombre, 0])
         seguir = input("Desea agregar otro nombre? (S/N): ")
+        while seguir.upper() != "S" and seguir.upper() != "N":
+            seguir = input("El caracter ingresado es invalido, desea agregar otro nombre? (S/N): ")
         if seguir.upper() == "N":
             break
 
@@ -23,7 +25,7 @@ def sumar_puntos():
             nombre = nombres[0]
             puntaje = nombres[1]
 
-            suma = int(input('Ingrese el puntaje obtenido: '))
+            suma = int(input('Ingrese el puntaje obtenido de {}: '.format(nombre)))
             puntaje += suma
             nombres[1] = puntaje
 
